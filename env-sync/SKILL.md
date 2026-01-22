@@ -1,6 +1,6 @@
 ---
 name: env-sync
-description: "Sync .env files from git root repository to worktrees. Use when asked to 'sync env', 'copy env', '同步 env', 'environment file', or when working in a git worktree that is missing a .env file. Automatically detects missing .env in worktrees."
+description: "Sync .env files from git root repository to worktrees. Use when asked to sync env, copy env, environment file, or when working in a git worktree that is missing a .env file. Automatically detects missing .env in worktrees."
 version: "1.1.0"
 metadata:
   author: qiaoshouqing
@@ -12,7 +12,7 @@ This skill syncs `.env` files from a git root repository to git worktrees.
 
 ## When to Use
 
-- User asks to "sync env", "copy env", or "同步 env"
+- User asks to sync env or copy env
 - User mentions missing environment variables or .env file
 - Working in a git worktree that lacks a .env file
 - User asks to set up environment for a worktree
