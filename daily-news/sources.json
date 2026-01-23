@@ -1,0 +1,533 @@
+{
+  "version": "2.0.0",
+  "description": "Design inspiration & novel things daily digest",
+  "target_items": 30,
+  "quality_floor": 3.0,
+
+  "tier1": {
+    "description": "Design platforms - WebFetch accessible",
+    "sources": [
+      {
+        "name": "Sidebar.io",
+        "name_zh": "Sidebar 设计资讯",
+        "url": "https://sidebar.io/",
+        "method": "webfetch",
+        "extract": "today's 5 best design links",
+        "fields": ["title", "source", "url", "category"],
+        "success_rate": 0.85,
+        "quality": 4.4,
+        "notes": "Curated design links daily"
+      },
+      {
+        "name": "Hacker News (Show HN & Design)",
+        "name_zh": "Hacker News (Show HN & 设计)",
+        "url": "https://news.ycombinator.com/",
+        "method": "webfetch",
+        "extract": "top 10 interesting Show HN projects and creative tools",
+        "fields": ["title", "url", "points", "comments"],
+        "success_rate": 0.95,
+        "quality": 4.2,
+        "notes": "Focus on novel projects, creative tools, and interesting side projects"
+      },
+      {
+        "name": "Kickstarter (Design & Tech)",
+        "name_zh": "Kickstarter 创意众筹",
+        "url": "https://www.kickstarter.com/discover/advanced?category_id=16&sort=magic",
+        "method": "websearch",
+        "fallback": "websearch",
+        "extract": "top 5 trending design/tech projects",
+        "fields": ["title", "creator", "category", "funded_percent", "url", "image_url"],
+        "success_rate": 0.85,
+        "quality": 4.5,
+        "notes": "Cloudflare protected - use WebSearch 'Kickstarter design tech trending'. Novel products before they exist"
+      },
+      {
+        "name": "Dezeen",
+        "name_zh": "Dezeen 设计杂志",
+        "url": "https://www.dezeen.com/design/",
+        "method": "websearch",
+        "fallback": "websearch",
+        "extract": "latest 5 design news articles",
+        "fields": ["title", "category", "url", "image_url"],
+        "success_rate": 0.90,
+        "quality": 4.6,
+        "notes": "Cloudflare protected - use WebSearch 'Dezeen design news'. Global design magazine"
+      },
+      {
+        "name": "GitHub Trending",
+        "name_zh": "GitHub 趋势项目",
+        "url": "https://github.com/trending",
+        "method": "webfetch",
+        "extract": "top 5 trending repos related to design tools, creative coding, or UI",
+        "fields": ["repo_name", "description", "stars_today", "language", "url"],
+        "success_rate": 0.95,
+        "quality": 4.3,
+        "notes": "Open source design tools, creative coding, generative art, UI frameworks"
+      }
+    ]
+  },
+
+  "tier2": {
+    "description": "Design & creativity platforms - Chrome MCP required",
+    "sources": [
+      {
+        "name": "Product Hunt",
+        "name_zh": "Product Hunt 新奇产品",
+        "url": "https://www.producthunt.com/",
+        "method": "chrome_mcp",
+        "fallback": "skip",
+        "extract": "top 5 products today, prioritize design tools and creative products",
+        "fields": ["name", "tagline", "upvotes", "category"],
+        "success_rate": 0.75,
+        "quality": 4.5,
+        "notes": "New and novel products, focus on design/creative tools"
+      },
+      {
+        "name": "Dribbble",
+        "name_zh": "Dribbble 热门设计",
+        "url": "https://dribbble.com/shots/popular",
+        "method": "chrome_mcp",
+        "fallback": "skip",
+        "extract": "top 8 popular shots",
+        "fields": ["title", "designer", "likes", "image_url"],
+        "success_rate": 0.70,
+        "quality": 4.5,
+        "notes": "Design inspiration and portfolios"
+      },
+      {
+        "name": "Awwwards",
+        "name_zh": "Awwwards 获奖网站",
+        "url": "https://www.awwwards.com/websites/",
+        "method": "chrome_mcp",
+        "fallback": "skip",
+        "extract": "latest 5 awarded sites",
+        "fields": ["title", "agency", "score", "url"],
+        "success_rate": 0.70,
+        "quality": 4.6,
+        "notes": "Award-winning web design"
+      },
+      {
+        "name": "Behance",
+        "name_zh": "Behance 精选作品",
+        "url": "https://www.behance.net/",
+        "method": "chrome_mcp",
+        "fallback": "skip",
+        "extract": "featured projects",
+        "fields": ["title", "creator", "category", "appreciations"],
+        "success_rate": 0.70,
+        "quality": 4.5,
+        "notes": "Adobe creative portfolios"
+      },
+      {
+        "name": "Muzli",
+        "name_zh": "Muzli 设计灵感",
+        "url": "https://muz.li/",
+        "method": "chrome_mcp",
+        "fallback": "skip",
+        "extract": "top 5 design inspirations",
+        "fields": ["title", "source", "category"],
+        "success_rate": 0.65,
+        "quality": 4.4,
+        "notes": "Design inspiration aggregator"
+      }
+    ]
+  },
+
+  "tier3_twitter": {
+    "description": "Design influencers on X/Twitter - Chrome MCP required",
+    "sources": [
+      {
+        "name": "X/Twitter @figma",
+        "name_zh": "@figma (Figma 官方)",
+        "url": "https://x.com/figma",
+        "method": "chrome_mcp",
+        "fallback": "skip",
+        "extract": "latest 3 tweets",
+        "fields": ["content", "date", "likes", "retweets"],
+        "success_rate": 0.65,
+        "quality": 4.5,
+        "notes": "Official Figma - design tool updates and tips"
+      },
+      {
+        "name": "X/Twitter @steveschoger",
+        "name_zh": "@steveschoger (Refactoring UI)",
+        "url": "https://x.com/steveschoger",
+        "method": "chrome_mcp",
+        "fallback": "skip",
+        "extract": "latest 3 tweets",
+        "fields": ["content", "date", "likes", "retweets"],
+        "success_rate": 0.65,
+        "quality": 4.6,
+        "notes": "Refactoring UI co-author, practical design tips"
+      },
+      {
+        "name": "X/Twitter @adamwathan",
+        "name_zh": "@adamwathan (Tailwind CSS)",
+        "url": "https://x.com/adamwathan",
+        "method": "chrome_mcp",
+        "fallback": "skip",
+        "extract": "latest 3 tweets",
+        "fields": ["content", "date", "likes", "retweets"],
+        "success_rate": 0.65,
+        "quality": 4.5,
+        "notes": "Tailwind CSS creator, design system updates"
+      },
+      {
+        "name": "X/Twitter @joulee",
+        "name_zh": "@joulee (Julie Zhuo)",
+        "url": "https://x.com/joulee",
+        "method": "chrome_mcp",
+        "fallback": "skip",
+        "extract": "latest 3 tweets",
+        "fields": ["content", "date", "likes", "retweets"],
+        "success_rate": 0.65,
+        "quality": 4.8,
+        "notes": "Former Facebook Design VP, design leadership insights"
+      },
+      {
+        "name": "X/Twitter @jnd1er",
+        "name_zh": "@jnd1er (Don Norman)",
+        "url": "https://x.com/jnd1er",
+        "method": "chrome_mcp",
+        "fallback": "skip",
+        "extract": "latest 3 tweets",
+        "fields": ["content", "date", "likes", "retweets"],
+        "success_rate": 0.60,
+        "quality": 4.9,
+        "notes": "Father of UX, 'The Design of Everyday Things' author"
+      },
+      {
+        "name": "X/Twitter @khoi",
+        "name_zh": "@khoi (Khoi Vinh)",
+        "url": "https://x.com/khoi",
+        "method": "chrome_mcp",
+        "fallback": "skip",
+        "extract": "latest 3 tweets",
+        "fields": ["content", "date", "likes", "retweets"],
+        "success_rate": 0.65,
+        "quality": 4.7,
+        "notes": "Adobe Principal Designer, former NYT Design Director"
+      },
+      {
+        "name": "X/Twitter @ireneau",
+        "name_zh": "@ireneau (Irene Au)",
+        "url": "https://x.com/ireneau",
+        "method": "chrome_mcp",
+        "fallback": "skip",
+        "extract": "latest 3 tweets",
+        "fields": ["content", "date", "likes", "retweets"],
+        "success_rate": 0.65,
+        "quality": 4.6,
+        "notes": "Former Head of Design at Google, Yahoo, Udacity"
+      },
+      {
+        "name": "X/Twitter @peterme",
+        "name_zh": "@peterme (Peter Merholz)",
+        "url": "https://x.com/peterme",
+        "method": "chrome_mcp",
+        "fallback": "skip",
+        "extract": "latest 3 tweets",
+        "fields": ["content", "date", "likes", "retweets"],
+        "success_rate": 0.65,
+        "quality": 4.5,
+        "notes": "Adaptive Path founder, design leadership"
+      },
+      {
+        "name": "X/Twitter @DannPetty",
+        "name_zh": "@DannPetty (Dann Petty)",
+        "url": "https://x.com/DannPetty",
+        "method": "chrome_mcp",
+        "fallback": "skip",
+        "extract": "latest 3 tweets",
+        "fields": ["content", "date", "likes", "retweets"],
+        "success_rate": 0.65,
+        "quality": 4.6,
+        "notes": "Design Director, freelance design community"
+      },
+      {
+        "name": "X/Twitter @zeldman",
+        "name_zh": "@zeldman (Jeffrey Zeldman)",
+        "url": "https://x.com/zeldman",
+        "method": "chrome_mcp",
+        "fallback": "skip",
+        "extract": "latest 3 tweets",
+        "fields": ["content", "date", "likes", "retweets"],
+        "success_rate": 0.65,
+        "quality": 4.7,
+        "notes": "A List Apart founder, web standards pioneer"
+      },
+      {
+        "name": "X/Twitter @frank_chimero",
+        "name_zh": "@frank_chimero (Frank Chimero)",
+        "url": "https://x.com/frank_chimero",
+        "method": "chrome_mcp",
+        "fallback": "skip",
+        "extract": "latest 3 tweets",
+        "fields": ["content", "date", "likes", "retweets"],
+        "success_rate": 0.65,
+        "quality": 4.6,
+        "notes": "Author of 'The Shape of Design'"
+      },
+      {
+        "name": "X/Twitter @debikielman",
+        "name_zh": "@debikielman (Debbie Millman)",
+        "url": "https://x.com/debikielman",
+        "method": "chrome_mcp",
+        "fallback": "skip",
+        "extract": "latest 3 tweets",
+        "fields": ["content", "date", "likes", "retweets"],
+        "success_rate": 0.65,
+        "quality": 4.7,
+        "notes": "Design Matters podcast host, brand strategist"
+      },
+      {
+        "name": "X/Twitter @rogie",
+        "name_zh": "@rogie (Rogie King)",
+        "url": "https://x.com/rogie",
+        "method": "chrome_mcp",
+        "fallback": "skip",
+        "extract": "latest 3 tweets",
+        "fields": ["content", "date", "likes", "retweets"],
+        "success_rate": 0.65,
+        "quality": 4.5,
+        "notes": "GitHub designer, Figma plugin developer"
+      },
+      {
+        "name": "X/Twitter @jbrewer",
+        "name_zh": "@jbrewer (Josh Brewer)",
+        "url": "https://x.com/jbrewer",
+        "method": "chrome_mcp",
+        "fallback": "skip",
+        "extract": "latest 3 tweets",
+        "fields": ["content", "date", "likes", "retweets"],
+        "success_rate": 0.65,
+        "quality": 4.5,
+        "notes": "52 Weeks of UX co-creator, former Twitter designer"
+      },
+      {
+        "name": "X/Twitter @hemeon",
+        "name_zh": "@hemeon (Marc Hemeon)",
+        "url": "https://x.com/hemeon",
+        "method": "chrome_mcp",
+        "fallback": "skip",
+        "extract": "latest 3 tweets",
+        "fields": ["content", "date", "likes", "retweets"],
+        "success_rate": 0.65,
+        "quality": 4.5,
+        "notes": "Design Inc founder, former YouTube design lead"
+      },
+      {
+        "name": "X/Twitter @destroytoday",
+        "name_zh": "@destroytoday (Jonnie Hallman)",
+        "url": "https://x.com/destroytoday",
+        "method": "chrome_mcp",
+        "fallback": "skip",
+        "extract": "latest 3 tweets",
+        "fields": ["content", "date", "likes", "retweets"],
+        "success_rate": 0.65,
+        "quality": 4.4,
+        "notes": "Cushion app creator, designer-developer"
+      },
+      {
+        "name": "X/Twitter @tobiasahlin",
+        "name_zh": "@tobiasahlin (Tobias Ahlin)",
+        "url": "https://x.com/tobiasahlin",
+        "method": "chrome_mcp",
+        "fallback": "skip",
+        "extract": "latest 3 tweets",
+        "fields": ["content", "date", "likes", "retweets"],
+        "success_rate": 0.65,
+        "quality": 4.5,
+        "notes": "Minecraft design lead, UI animation expert"
+      },
+      {
+        "name": "X/Twitter @lukew",
+        "name_zh": "@lukew (Luke Wroblewski)",
+        "url": "https://x.com/lukew",
+        "method": "chrome_mcp",
+        "fallback": "skip",
+        "extract": "latest 3 tweets",
+        "fields": ["content", "date", "likes", "retweets"],
+        "success_rate": 0.65,
+        "quality": 4.8,
+        "notes": "Coined 'Mobile First', Google Product Director, data-driven design insights"
+      },
+      {
+        "name": "X/Twitter @jmspool",
+        "name_zh": "@jmspool (Jared Spool)",
+        "url": "https://x.com/jmspool",
+        "method": "chrome_mcp",
+        "fallback": "skip",
+        "extract": "latest 3 tweets",
+        "fields": ["content", "date", "likes", "retweets"],
+        "success_rate": 0.60,
+        "quality": 4.7,
+        "notes": "UIE founder, 113k followers, usability research legend"
+      },
+      {
+        "name": "X/Twitter @andybudd",
+        "name_zh": "@andybudd (Andy Budd)",
+        "url": "https://x.com/andybudd",
+        "method": "chrome_mcp",
+        "fallback": "skip",
+        "extract": "latest 3 tweets",
+        "fields": ["content", "date", "likes", "retweets"],
+        "success_rate": 0.65,
+        "quality": 4.6,
+        "notes": "Clearleft founder, UX leadership and design entrepreneurship"
+      },
+      {
+        "name": "X/Twitter @veen",
+        "name_zh": "@veen (Jeff Veen)",
+        "url": "https://x.com/veen",
+        "method": "chrome_mcp",
+        "fallback": "skip",
+        "extract": "latest 3 tweets",
+        "fields": ["content", "date", "likes", "retweets"],
+        "success_rate": 0.65,
+        "quality": 4.6,
+        "notes": "Typekit & Adaptive Path founder, True Ventures Design Partner"
+      },
+      {
+        "name": "X/Twitter @brad_frost",
+        "name_zh": "@brad_frost (Brad Frost)",
+        "url": "https://x.com/brad_frost",
+        "method": "chrome_mcp",
+        "fallback": "skip",
+        "extract": "latest 3 tweets",
+        "fields": ["content", "date", "likes", "retweets"],
+        "success_rate": 0.65,
+        "quality": 4.7,
+        "notes": "Atomic Design creator, design systems pioneer"
+      },
+      {
+        "name": "X/Twitter @danmall",
+        "name_zh": "@danmall (Dan Mall)",
+        "url": "https://x.com/danmall",
+        "method": "chrome_mcp",
+        "fallback": "skip",
+        "extract": "latest 3 tweets",
+        "fields": ["content", "date", "likes", "retweets"],
+        "success_rate": 0.65,
+        "quality": 4.6,
+        "notes": "Design systems expert, worked with Target, Fidelity, Cisco"
+      },
+      {
+        "name": "X/Twitter @scottbelsky",
+        "name_zh": "@scottbelsky (Scott Belsky)",
+        "url": "https://x.com/scottbelsky",
+        "method": "chrome_mcp",
+        "fallback": "skip",
+        "extract": "latest 3 tweets",
+        "fields": ["content", "date", "likes", "retweets"],
+        "success_rate": 0.65,
+        "quality": 4.7,
+        "notes": "Behance founder, Adobe CPO, creative industry visionary"
+      },
+      {
+        "name": "X/Twitter @jessicawalsh",
+        "name_zh": "@jessicawalsh (Jessica Walsh)",
+        "url": "https://x.com/jessicawalsh",
+        "method": "chrome_mcp",
+        "fallback": "skip",
+        "extract": "latest 3 tweets",
+        "fields": ["content", "date", "likes", "retweets"],
+        "success_rate": 0.65,
+        "quality": 4.8,
+        "notes": "&Walsh founder, bold experimental branding and typography"
+      },
+      {
+        "name": "X/Twitter @timaborett",
+        "name_zh": "@timaborett (Timothy Goodman)",
+        "url": "https://x.com/timothygoodman",
+        "method": "chrome_mcp",
+        "fallback": "skip",
+        "extract": "latest 3 tweets",
+        "fields": ["content", "date", "likes", "retweets"],
+        "success_rate": 0.65,
+        "quality": 4.6,
+        "notes": "NYC illustrator, muralist, hand-lettering artist"
+      },
+      {
+        "name": "X/Twitter @davidairey",
+        "name_zh": "@davidairey (David Airey)",
+        "url": "https://x.com/davidairey",
+        "method": "chrome_mcp",
+        "fallback": "skip",
+        "extract": "latest 3 tweets",
+        "fields": ["content", "date", "likes", "retweets"],
+        "success_rate": 0.65,
+        "quality": 4.5,
+        "notes": "Brand identity specialist, Logo Design Love author"
+      },
+      {
+        "name": "X/Twitter @karenmcgrane",
+        "name_zh": "@karenmcgrane (Karen McGrane)",
+        "url": "https://x.com/karenmcgrane",
+        "method": "chrome_mcp",
+        "fallback": "skip",
+        "extract": "latest 3 tweets",
+        "fields": ["content", "date", "likes", "retweets"],
+        "success_rate": 0.65,
+        "quality": 4.5,
+        "notes": "Content strategy & UX expert, insightful design commentary"
+      },
+      {
+        "name": "X/Twitter @boagworld",
+        "name_zh": "@boagworld (Paul Boag)",
+        "url": "https://x.com/boagworld",
+        "method": "chrome_mcp",
+        "fallback": "skip",
+        "extract": "latest 3 tweets",
+        "fields": ["content", "date", "likes", "retweets"],
+        "success_rate": 0.65,
+        "quality": 4.5,
+        "notes": "UX leader, 6 books on design and conversion optimization"
+      },
+      {
+        "name": "X/Twitter @ilovetypography",
+        "name_zh": "@ilovetypography (I Love Typography)",
+        "url": "https://x.com/ilovetypography",
+        "method": "chrome_mcp",
+        "fallback": "skip",
+        "extract": "latest 3 tweets",
+        "fields": ["content", "date", "likes", "retweets"],
+        "success_rate": 0.65,
+        "quality": 4.6,
+        "notes": "World's favorite fonts & typography blog, book history"
+      },
+      {
+        "name": "X/Twitter @Typographica",
+        "name_zh": "@Typographica (Typographica)",
+        "url": "https://x.com/Typographica",
+        "method": "chrome_mcp",
+        "fallback": "skip",
+        "extract": "latest 3 tweets",
+        "fields": ["content", "date", "likes", "retweets"],
+        "success_rate": 0.65,
+        "quality": 4.5,
+        "notes": "Typeface reviews and typographic commentary since 2002"
+      }
+    ]
+  },
+
+  "fetch_config": {
+    "webfetch": {
+      "timeout_ms": 30000,
+      "retry": 1,
+      "cache_minutes": 60
+    },
+    "chrome_mcp": {
+      "timeout_ms": 45000,
+      "wait_for_load_seconds": 3,
+      "screenshot_on_error": true
+    }
+  },
+
+  "output": {
+    "directory": "NewsReport",
+    "filename_pattern": "{date}-design-daily.md",
+    "include_stats": true,
+    "include_timestamp": true
+  }
+}

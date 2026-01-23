@@ -1,7 +1,7 @@
 # Claude Code Skills Collection
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Skills](https://img.shields.io/badge/skills-1-blue.svg)](https://github.com/qiaoshouqing/Skills)
+[![Skills](https://img.shields.io/badge/skills-3-blue.svg)](https://github.com/qiaoshouqing/Skills)
 
 A curated collection of custom skills for Claude Code, designed to enhance productivity and automate common development workflows.
 
@@ -50,6 +50,72 @@ $ cc
 ```
 
 [📖 View detailed documentation →](./env-sync/SKILL.md)
+
+---
+
+### 🎨 daily-news (Design Daily)
+
+Generate daily design inspiration & novel things reports by aggregating from Dribbble, Awwwards, Product Hunt, Behance, and 31 design influencers on Twitter/X. **Auto-detects user language**.
+
+**Quick Start:**
+```bash
+/daily-news
+# or simply ask:
+# "design daily" / "设计日报" / "デザインニュース" / "what's new in design"
+```
+
+**Features:**
+- 🌍 **Auto Language Detection**: Responds in ANY language
+- 🎨 **Design-Focused**: Dribbble, Awwwards, Behance, Muzli, Sidebar.io
+- 🆕 **Novel Things**: Product Hunt new products, Show HN creative tools
+- 🐦 **31 Design Influencers**: Julie Zhuo, Don Norman, Jessica Walsh, Brad Frost, Scott Belsky, and more
+- 🤖 **Smart Fallback**: Uses Chrome MCP for JS-heavy sites
+
+**Data Sources (41 total):**
+| Category | Sources |
+|----------|---------|
+| Design Platforms | Dribbble, Awwwards, Behance, Muzli, Sidebar.io |
+| Novel Products | Product Hunt, Hacker News (Show HN), Kickstarter, GitHub Trending |
+| Design Media | Dezeen |
+| Twitter Influencers | @joulee, @jessicawalsh, @brad_frost, @scottbelsky, @lukew, +26 more |
+
+**Example:**
+```bash
+$ cc
+> 设计日报
+
+检测到中文，将以中文生成设计日报。
+正在采集设计资讯...
+✅ Sidebar.io (5 条)
+✅ Dribbble (8 条)
+✅ Awwwards (5 条)
+✅ Product Hunt (5 条)
+...
+日报已保存至: NewsReport/2026-01-23-design-daily.md
+```
+
+[📖 View detailed documentation →](./daily-news/SKILL.md)
+
+---
+
+### 🎬 video-downloader
+
+Download videos, audio, or subtitles from YouTube, Bilibili, Twitter and 1000+ sites using yt-dlp.
+
+**Quick Start:**
+```bash
+/video-downloader
+# or simply ask:
+# "download video" / "下载视频" / "extract audio"
+```
+
+**Features:**
+- 🎥 **Multi-Platform**: YouTube, Bilibili, Twitter, and 1000+ sites
+- 🎵 **Audio Extraction**: Extract MP3/M4A from videos
+- 📝 **Subtitles**: Download or embed subtitles
+- 🔧 **Auto-Install**: Automatically installs yt-dlp and ffmpeg
+
+[📖 View detailed documentation →](./video-downloader/SKILL.md)
 
 ## 📦 Installation
 
