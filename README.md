@@ -1,7 +1,7 @@
 # Claude Code Skills Collection
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Skills](https://img.shields.io/badge/skills-3-blue.svg)](https://github.com/qiaoshouqing/Skills)
+[![Skills](https://img.shields.io/badge/skills-4-blue.svg)](https://github.com/qiaoshouqing/Skills)
 
 A curated collection of custom skills for Claude Code, designed to enhance productivity and automate common development workflows.
 
@@ -117,6 +117,45 @@ Download videos, audio, or subtitles from YouTube, Bilibili, Twitter and 1000+ s
 
 [📖 View detailed documentation →](./video-downloader/SKILL.md)
 
+---
+
+### 🚀 ship
+
+Commit, push, and create a PR in one step. Auto-generates commit messages and detailed PR descriptions with impact analysis.
+
+**Quick Start:**
+```bash
+/ship
+# or simply ask:
+# "ship it" / "提交PR" / "发PR"
+```
+
+**Features:**
+- ⚡ **One-Click Flow**: No confirmation prompts - "ship" is the intent
+- 🧠 **Smart Branch**: Auto-creates feature branch if on main/master
+- 📝 **Auto Commit Message**: Generates conventional commit messages from diff
+- 📋 **Detailed PR**: Summary, file changes table, impact analysis, test plan
+- 📦 **Draft Support**: Add `--draft` or say "草稿" for draft PRs
+
+**Use Cases:**
+- Quick shipping of completed features
+- Creating PRs without manual commit/push/PR workflow
+- Draft PRs for work-in-progress changes
+
+**Example:**
+```bash
+$ cc
+> ship it
+
+✅ Shipped!
+   Branch: feat/add-login-form
+   Commit: abc1234 - feat(auth): add login form component
+   PR: https://github.com/user/repo/pull/123
+   Files: 3 changed (+142, -12)
+```
+
+[📖 View detailed documentation →](./ship/SKILL.md)
+
 ## 📦 Installation
 
 ### Prerequisites
@@ -187,7 +226,7 @@ cc
 
 Planned skills for future releases:
 
-- [ ] **git-commit-ai** - AI-assisted commit message generation
+- [x] **ship** - One-click commit, push, and PR creation
 - [ ] **test-runner** - Smart test execution based on changes
 - [ ] **code-review** - Automated code review checklist
 - [ ] **docker-helper** - Docker container management utilities
