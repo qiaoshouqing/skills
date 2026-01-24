@@ -3,7 +3,7 @@
 # Agent Skills 技能集合
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Skills](https://img.shields.io/badge/技能數量-4-blue.svg)](https://github.com/qiaoshouqing/Skills)
+[![Skills](https://img.shields.io/badge/技能數量-5-blue.svg)](https://github.com/qiaoshouqing/Skills)
 
 精選的 Agent Skills 技能集合，旨在提升開發效率、自動化常見開發流程。
 
@@ -118,6 +118,39 @@ Claude Code · OpenAI Codex · Gemini CLI · Cursor · VS Code · Amp · TRAE ·
 
 [📖 檢視詳細文件 →](./ship/SKILL.md)
 
+---
+
+### 📐 code-standards
+
+為任何 AI 編碼工具產生通用程式碼品質標準。基於 Linus Torvalds 的「Good Taste」哲學，配備嚴格的 5 層程式碼審查框架。
+
+**快速開始：**
+```bash
+/code-standards
+# 或直接說：
+# "setup code standards" / "代码规范" / "コード規約"
+```
+
+**特性：**
+- 🔍 **自動偵測**：偵測專案中的 AI 工具（Claude、Codex、Cursor、Gemini、Copilot、Windsurf、Aider、Cline）
+- 🌍 **4 種語言**：English、简体中文、繁體中文、日本語（自動偵測）
+- 📋 **5 層程式碼審查**：資料結構 → 邊界情況 → 複雜度 → 破壞性分析 → 必要性
+- 🚫 **反模式清單**：拒絕過度工程、不必要的抽象和設計模式濫用
+
+**支援的工具：**
+| 工具 | 產生檔案 |
+|------|----------|
+| Claude Code | `CLAUDE.md` |
+| OpenAI Codex | `AGENTS.md` |
+| Cursor | `.cursor/rules/code-standards.mdc` |
+| Gemini CLI | `GEMINI.md` |
+| GitHub Copilot | `.github/copilot-instructions.md` |
+| Windsurf | `.windsurfrules` |
+| Aider | `CONVENTIONS.md` |
+| Cline / Roo Code | `.clinerules/code-standards.md` |
+
+[📖 檢視詳細文件 →](./code-standards/SKILL.md)
+
 ## 📦 安裝
 
 ### 一鍵安裝（推薦）
@@ -169,6 +202,7 @@ cc
 ## 🚀 路線圖
 
 - [x] **ship** - 一鍵 commit、push 和建立 PR
+- [x] **code-standards** - 通用程式碼品質標準產生器（多工具、多語言）
 - [ ] **test-runner** - 基於變更的智慧測試執行
 - [ ] **code-review** - 自動化程式碼審查清單
 - [ ] **docker-helper** - Docker 容器管理工具

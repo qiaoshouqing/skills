@@ -3,7 +3,7 @@
 # Agent Skills コレクション
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Skills](https://img.shields.io/badge/スキル数-4-blue.svg)](https://github.com/qiaoshouqing/Skills)
+[![Skills](https://img.shields.io/badge/スキル数-5-blue.svg)](https://github.com/qiaoshouqing/Skills)
 
 開発効率の向上と一般的な開発ワークフローの自動化を目的とした、Agent Skills のコレクションです。
 
@@ -118,6 +118,39 @@ yt-dlp を使用して YouTube、Bilibili、Twitter など1000以上のサイト
 
 [📖 詳細ドキュメント →](./ship/SKILL.md)
 
+---
+
+### 📐 code-standards
+
+あらゆる AI コーディングツール向けの汎用コード品質基準を生成。Linus Torvalds の「Good Taste」哲学に基づき、厳格な 5 層コードレビューフレームワークを備えています。
+
+**クイックスタート：**
+```bash
+/code-standards
+# または：
+# "setup code standards" / "代码规范" / "コード規約"
+```
+
+**機能：**
+- 🔍 **自動検出**：プロジェクト内の AI ツールを検出（Claude、Codex、Cursor、Gemini、Copilot、Windsurf、Aider、Cline）
+- 🌍 **4 言語対応**：English、简体中文、繁體中文、日本語（自動検出）
+- 📋 **5 層コードレビュー**：データ構造 → エッジケース → 複雑度 → 破壊的分析 → 必要性
+- 🚫 **アンチパターンリスト**：過剰設計、不要な抽象化、デザインパターンの濫用を拒否
+
+**対応ツール：**
+| ツール | 生成ファイル |
+|--------|-------------|
+| Claude Code | `CLAUDE.md` |
+| OpenAI Codex | `AGENTS.md` |
+| Cursor | `.cursor/rules/code-standards.mdc` |
+| Gemini CLI | `GEMINI.md` |
+| GitHub Copilot | `.github/copilot-instructions.md` |
+| Windsurf | `.windsurfrules` |
+| Aider | `CONVENTIONS.md` |
+| Cline / Roo Code | `.clinerules/code-standards.md` |
+
+[📖 詳細ドキュメント →](./code-standards/SKILL.md)
+
 ## 📦 インストール
 
 ### ワンコマンドインストール（推奨）
@@ -169,6 +202,7 @@ cc
 ## 🚀 ロードマップ
 
 - [x] **ship** - ワンクリックで commit、push、PR 作成
+- [x] **code-standards** - 汎用コード品質基準ジェネレーター（マルチツール・多言語対応）
 - [ ] **test-runner** - 変更に基づくスマートテスト実行
 - [ ] **code-review** - 自動コードレビューチェックリスト
 - [ ] **docker-helper** - Docker コンテナ管理ユーティリティ
