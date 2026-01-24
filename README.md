@@ -3,7 +3,7 @@
 # Agent Skills Collection
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Skills](https://img.shields.io/badge/skills-4-blue.svg)](https://github.com/qiaoshouqing/Skills)
+[![Skills](https://img.shields.io/badge/skills-5-blue.svg)](https://github.com/qiaoshouqing/Skills)
 
 A curated collection of agent skills designed to enhance productivity and automate common development workflows.
 
@@ -118,6 +118,39 @@ Commit, push, and create a PR in one step. Auto-generates commit messages and de
 
 [📖 View detailed documentation →](./ship/SKILL.md)
 
+---
+
+### 📐 code-standards
+
+Generate universal code quality standards for any AI coding tool. Based on Linus Torvalds' "Good Taste" philosophy with a rigorous 5-layer code review framework.
+
+**Quick Start:**
+```bash
+/code-standards
+# or simply ask:
+# "setup code standards" / "代码规范" / "コード規約"
+```
+
+**Features:**
+- 🔍 **Auto-Detection**: Detects AI tools in your project (Claude, Codex, Cursor, Gemini, Copilot, Windsurf, Aider, Cline)
+- 🌍 **4 Languages**: English, 简体中文, 繁體中文, 日本語 (auto-detected)
+- 📋 **5-Layer Code Review**: Data structures → Edge cases → Complexity → Destructive analysis → Necessity
+- 🚫 **Anti-Pattern List**: Reject over-engineering, unnecessary abstractions, and design pattern abuse
+
+**Supported Tools:**
+| Tool | Generated File |
+|------|---------------|
+| Claude Code | `CLAUDE.md` |
+| OpenAI Codex | `AGENTS.md` |
+| Cursor | `.cursor/rules/code-standards.mdc` |
+| Gemini CLI | `GEMINI.md` |
+| GitHub Copilot | `.github/copilot-instructions.md` |
+| Windsurf | `.windsurfrules` |
+| Aider | `CONVENTIONS.md` |
+| Cline / Roo Code | `.clinerules/code-standards.md` |
+
+[📖 View detailed documentation →](./code-standards/SKILL.md)
+
 ## 📦 Installation
 
 ### One-Command Install (Recommended)
@@ -169,6 +202,7 @@ cc
 ## 🚀 Roadmap
 
 - [x] **ship** - One-click commit, push, and PR creation
+- [x] **code-standards** - Universal code quality standards generator (multi-tool, multi-language)
 - [ ] **test-runner** - Smart test execution based on changes
 - [ ] **code-review** - Automated code review checklist
 - [ ] **docker-helper** - Docker container management utilities
