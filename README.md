@@ -1,18 +1,27 @@
-# Claude Code Skills Collection
+**English** | [简体中文](./README_zh-CN.md) | [繁體中文](./README_zh-TW.md) | [日本語](./README_ja.md)
+
+# Agent Skills Collection
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Skills](https://img.shields.io/badge/skills-4-blue.svg)](https://github.com/qiaoshouqing/Skills)
 
-A curated collection of custom skills for Claude Code, designed to enhance productivity and automate common development workflows.
+A curated collection of agent skills designed to enhance productivity and automate common development workflows.
 
-## What are Claude Code Skills?
+## What are Agent Skills?
 
-Skills are reusable, shareable prompts that extend Claude Code's capabilities. They are invoked using the `/` prefix (e.g., `/env-sync`) and provide specialized functionality for specific tasks.
+[Agent Skills](https://agentskills.io/) are an open standard for giving AI agents reusable capabilities. Skills follow the `SKILL.md` specification and work across multiple AI coding tools:
+
+**Supported Agents:**
+
+Claude Code · OpenAI Codex · Gemini CLI · Cursor · VS Code · Amp · TRAE · Roo Code · Goose · and more
+
+Skills are invoked using the `/` prefix (e.g., `/env-sync`) and provide specialized functionality for specific tasks.
 
 ### Key Features
 
+- **Open Standard**: Works across all agents that support the [Agent Skills](https://agentskills.io/) specification
 - **Progressive Disclosure**: Skills load only what's needed, keeping context efficient
-- **Auto-Discovery**: Place skills in `~/.claude/skills/` and they're automatically available
+- **Auto-Discovery**: Place skills in your agent's skills directory and they're automatically available
 - **Extensible**: Easy to create custom skills for your specific workflows
 
 ## Available Skills
@@ -23,31 +32,16 @@ Syncs `.env` files from git root repository to git worktrees with security built
 
 **Quick Start:**
 ```bash
-# In your git worktree
 /env-sync
 # or simply ask:
 # "sync env" / "copy env" / "同步 env"
 ```
 
 **Features:**
-- 🔒 **Security First**: Never displays `.env` contents, always asks before overwriting
-- 🎯 **Auto-Detection**: Automatically detects git worktrees and validates paths
-- 🌍 **Multilingual**: Supports English and Chinese trigger phrases
-- ✅ **Validation**: Ensures source exists and target is a valid worktree
-
-**Use Cases:**
-- Working in a git worktree that lacks a .env file
-- Setting up environment for a new worktree
-- Keeping environment variables synchronized across worktrees
-
-**Example:**
-```bash
-# You're in a worktree at: /project/.worktrees/feature-branch
-# Root repo at: /project/ (has .env)
-$ cc
-> sync env
-✓ Synced .env from /project/
-```
+- 🔒 Security First: Never displays `.env` contents, always asks before overwriting
+- 🎯 Auto-Detection: Automatically detects git worktrees and validates paths
+- 🌍 Multilingual: Supports English and Chinese trigger phrases
+- ✅ Validation: Ensures source exists and target is a valid worktree
 
 [📖 View detailed documentation →](./env-sync/SKILL.md)
 
@@ -65,11 +59,11 @@ Generate daily design inspiration & novel things reports by aggregating from Dri
 ```
 
 **Features:**
-- 🌍 **Auto Language Detection**: Responds in ANY language
-- 🎨 **Design-Focused**: Dribbble, Awwwards, Behance, Muzli, Sidebar.io
-- 🆕 **Novel Things**: Product Hunt new products, Show HN creative tools
-- 🐦 **31 Design Influencers**: Julie Zhuo, Don Norman, Jessica Walsh, Brad Frost, Scott Belsky, and more
-- 🤖 **Smart Fallback**: Uses Chrome MCP for JS-heavy sites
+- 🌍 Auto Language Detection: Responds in ANY language
+- 🎨 Design-Focused: Dribbble, Awwwards, Behance, Muzli, Sidebar.io
+- 🆕 Novel Things: Product Hunt new products, Show HN creative tools
+- 🐦 31 Design Influencers: Julie Zhuo, Don Norman, Jessica Walsh, Brad Frost, and more
+- 🤖 Smart Fallback: Uses Chrome MCP for JS-heavy sites
 
 **Data Sources (41 total):**
 | Category | Sources |
@@ -78,21 +72,6 @@ Generate daily design inspiration & novel things reports by aggregating from Dri
 | Novel Products | Product Hunt, Hacker News (Show HN), Kickstarter, GitHub Trending |
 | Design Media | Dezeen |
 | Twitter Influencers | @joulee, @jessicawalsh, @brad_frost, @scottbelsky, @lukew, +26 more |
-
-**Example:**
-```bash
-$ cc
-> 设计日报
-
-检测到中文，将以中文生成设计日报。
-正在采集设计资讯...
-✅ Sidebar.io (5 条)
-✅ Dribbble (8 条)
-✅ Awwwards (5 条)
-✅ Product Hunt (5 条)
-...
-日报已保存至: NewsReport/2026-01-23-design-daily.md
-```
 
 [📖 View detailed documentation →](./daily-news/SKILL.md)
 
@@ -110,10 +89,10 @@ Download videos, audio, or subtitles from YouTube, Bilibili, Twitter and 1000+ s
 ```
 
 **Features:**
-- 🎥 **Multi-Platform**: YouTube, Bilibili, Twitter, and 1000+ sites
-- 🎵 **Audio Extraction**: Extract MP3/M4A from videos
-- 📝 **Subtitles**: Download or embed subtitles
-- 🔧 **Auto-Install**: Automatically installs yt-dlp and ffmpeg
+- 🎥 Multi-Platform: YouTube, Bilibili, Twitter, and 1000+ sites
+- 🎵 Audio Extraction: Extract MP3/M4A from videos
+- 📝 Subtitles: Download or embed subtitles
+- 🔧 Auto-Install: Automatically installs yt-dlp and ffmpeg
 
 [📖 View detailed documentation →](./video-downloader/SKILL.md)
 
@@ -131,100 +110,63 @@ Commit, push, and create a PR in one step. Auto-generates commit messages and de
 ```
 
 **Features:**
-- ⚡ **One-Click Flow**: No confirmation prompts - "ship" is the intent
-- 🧠 **Smart Branch**: Auto-creates feature branch if on main/master
-- 📝 **Auto Commit Message**: Generates conventional commit messages from diff
-- 📋 **Detailed PR**: Summary, file changes table, impact analysis, test plan
-- 📦 **Draft Support**: Add `--draft` or say "草稿" for draft PRs
-
-**Use Cases:**
-- Quick shipping of completed features
-- Creating PRs without manual commit/push/PR workflow
-- Draft PRs for work-in-progress changes
-
-**Example:**
-```bash
-$ cc
-> ship it
-
-✅ Shipped!
-   Branch: feat/add-login-form
-   Commit: abc1234 - feat(auth): add login form component
-   PR: https://github.com/user/repo/pull/123
-   Files: 3 changed (+142, -12)
-```
+- ⚡ One-Click Flow: No confirmation prompts - "ship" is the intent
+- 🧠 Smart Branch: Auto-creates feature branch if on main/master
+- 📝 Auto Commit Message: Generates conventional commit messages from diff
+- 📋 Detailed PR: Summary, file changes table, impact analysis, test plan
+- 📦 Draft Support: Add `--draft` or say "草稿" for draft PRs
 
 [📖 View detailed documentation →](./ship/SKILL.md)
 
 ## 📦 Installation
 
-### Prerequisites
+### One-Command Install (Recommended)
 
-- [Claude Code CLI](https://claude.ai/download) installed
-- Skills directory at `~/.claude/skills/` (created automatically on first run)
-
-### Quick Install (Recommended)
-
-Install all skills at once using symlinks:
+Install all skills with a single command using the [skills.sh](https://skills.sh/) ecosystem. It auto-detects your installed agents and places skills in the correct directories:
 
 ```bash
-# Clone this repository
-git clone git@github.com:qiaoshouqing/Skills.git ~/claude-skills
-
-# Create symlinks for all skills
-cd ~/claude-skills
-for skill in */SKILL.md; do
-  skill_name=$(dirname "$skill")
-  ln -sf "$(pwd)/$skill_name" ~/.claude/skills/
-done
-
-# Verify installation
-ls -la ~/.claude/skills/
+npx skills add qiaoshouqing/Skills
 ```
 
-### Individual Skill Installation
+Install a single skill:
 
-Install only specific skills you need:
+```bash
+npx skills add qiaoshouqing/Skills --skill env-sync
+```
+
+### Manual Installation
+
+If you prefer manual control (example for Claude Code):
 
 ```bash
 # Clone the repository
 git clone git@github.com:qiaoshouqing/Skills.git ~/claude-skills
 
-# Install only env-sync
+# Install all skills via symlinks
+cd ~/claude-skills
+for skill in */SKILL.md; do
+  skill_name=$(dirname "$skill")
+  ln -sf "$(pwd)/$skill_name" ~/.claude/skills/
+done
+```
+
+Install a single skill:
+
+```bash
 ln -sf ~/claude-skills/env-sync ~/.claude/skills/env-sync
 ```
 
-### Manual Installation
-
-Copy skills directly without git:
-
-```bash
-# Download and extract
-curl -L https://github.com/qiaoshouqing/Skills/archive/refs/heads/main.zip -o skills.zip
-unzip skills.zip
-cd Skills-main
-
-# Copy specific skill
-cp -r env-sync ~/.claude/skills/
-
-# Clean up
-cd .. && rm -rf Skills-main skills.zip
-```
+> **Note:** Different agents use different skill directories. `npx skills add` handles this automatically. For manual installation to other agents, refer to their documentation.
 
 ### Verify Installation
 
 ```bash
-# List installed skills
-ls ~/.claude/skills/
-
 # Start Claude Code and test
 cc
 > /env-sync --help
 ```
 
 ## 🚀 Roadmap
-
-Planned skills for future releases:
 
 - [x] **ship** - One-click commit, push, and PR creation
 - [ ] **test-runner** - Smart test execution based on changes
@@ -255,7 +197,7 @@ Skills can be triggered in multiple ways:
 <details>
 <summary><strong>Can I modify existing skills?</strong></summary>
 
-Yes! If you used symlinks during installation, you can:
+Yes! If you used symlinks during installation:
 1. Edit the skill in `~/claude-skills/skill-name/SKILL.md`
 2. Changes are immediately available (no restart needed)
 3. Commit and contribute back via pull request
@@ -298,68 +240,6 @@ skill-name/
 └── scripts/          # Utility scripts (optional)
 ```
 
-### Creating a New Skill
-
-**Step 1: Create the directory structure**
-
-```bash
-cd ~/claude-skills
-mkdir -p my-skill/{references,examples,scripts}
-touch my-skill/SKILL.md
-```
-
-**Step 2: Write SKILL.md with proper frontmatter**
-
-```yaml
----
-name: my-skill
-description: "This skill should be used when the user asks to 'trigger phrase 1', 'trigger phrase 2', or mentions specific keywords. Be specific about when to activate."
-version: "1.0.0"
-metadata:
-  author: your-name
----
-
-# Skill Title
-
-Brief description of what this skill does.
-
-## When to Use
-
-- Specific scenario 1
-- Specific scenario 2
-- Specific scenario 3
-
-## Instructions for Agent
-
-Step-by-step instructions on how Claude should use this skill...
-```
-
-**Step 3: Follow best practices**
-
-- ✅ Use third-person in description ("This skill should be used when...")
-- ✅ Include specific trigger phrases users would say
-- ✅ Keep SKILL.md focused (~1,500-2,000 words)
-- ✅ Use imperative form in instructions ("Do X" not "You should do X")
-- ✅ Move detailed content to `references/` directory
-- ✅ Provide working examples in `examples/` directory
-
-**Step 4: Test your skill**
-
-```bash
-# Install locally
-ln -sf ~/claude-skills/my-skill ~/.claude/skills/my-skill
-
-# Test in Claude Code
-cc
-> /my-skill
-```
-
-**Step 5: Submit PR**
-
-- Include a clear description of the skill's purpose
-- Add usage examples
-- Update this README to list your skill
-
 ### Contribution Guidelines
 
 - Ensure skills are well-documented and tested
@@ -367,25 +247,6 @@ cc
 - One skill per pull request
 - Include examples of expected behavior
 - Be responsive to feedback during code review
-
-For detailed skill development guidelines, see [Claude Code's official skill development documentation](~/.claude/plugins/marketplaces/claude-plugins-official/plugins/plugin-dev/skills/skill-development/SKILL.md)
-
-## 📋 Requirements
-
-- **Claude Code CLI** - [Download here](https://claude.ai/download)
-- **Git** (optional) - For installation via git clone
-- **Bash/Zsh** - For running installation scripts
-
-**Supported Platforms:**
-- macOS (tested)
-- Linux (should work)
-- Windows WSL (should work)
-
-## 📚 Resources
-
-- [Claude Code Documentation](https://docs.anthropic.com/claude/docs)
-- [Skill Development Guide](https://github.com/anthropics/claude-code)
-- [Official Skills Marketplace](https://claude.ai/skills)
 
 ## 🐛 Troubleshooting
 
@@ -407,15 +268,20 @@ ln -sf ~/claude-skills/env-sync ~/.claude/skills/env-sync
 - Try using the exact trigger phrase mentioned
 - Use `/skill-name` to manually invoke
 
+## 📋 Requirements
+
+- **A compatible AI agent** - Claude Code, Codex, Gemini CLI, Cursor, VS Code, Amp, TRAE, etc.
+- **Node.js** (optional) - Required for `npx skills add` one-command install
+- **Git** (optional) - For installation via git clone
+
+**Supported Platforms:**
+- macOS (tested)
+- Linux (should work)
+- Windows WSL (should work)
+
 ## 📄 License
 
 MIT License - see [LICENSE](./LICENSE) file for details.
-
-This means you can:
-- ✅ Use commercially
-- ✅ Modify and distribute
-- ✅ Use privately
-- ✅ Sublicense
 
 ## 👤 Author
 
@@ -427,12 +293,6 @@ This means you can:
 - **Issues**: [GitHub Issues](https://github.com/qiaoshouqing/Skills/issues)
 - **Discussions**: [GitHub Discussions](https://github.com/qiaoshouqing/Skills/discussions)
 - **Email**: 1143878969@qq.com
-
-For general Claude Code questions, visit [Claude Code Documentation](https://docs.anthropic.com/claude/docs).
-
-## ⭐ Acknowledgments
-
-Built with [Claude Code](https://claude.ai/code) - An AI-powered coding assistant.
 
 ---
 
