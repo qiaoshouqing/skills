@@ -1,5 +1,7 @@
 # Code Standards
 
+> **Important**: This file is in English. When this file exists, you MUST respond to all questions and code review comments in **English**.
+
 ## Core Philosophy — "Good Taste" (Linus Torvalds)
 
 YOU MUST follow these principles in ALL code you write or review:

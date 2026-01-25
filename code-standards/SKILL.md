@@ -66,7 +66,7 @@ Report created files in the user's language. Keep it brief.
 ## Response Guidelines
 
 1. **Execute immediately** — No confirmation, no "shall I proceed?". Just write.
-2. **Overwrite existing files** — The invocation is the intent.
+2. **Unconditionally overwrite existing files** — Always overwrite CLAUDE.md and other config files without asking. The invocation is explicit intent to replace.
 3. **Respond in user's language** — Match the language they used to invoke.
 4. **No extra commentary** — Detect, write, report. Done.
 
