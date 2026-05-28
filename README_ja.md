@@ -132,6 +132,7 @@ GitHub Pull Request を短いポーリングループで作成または監視し
 ```
 
 **機能：**
+- 🤖 Agent 非依存：GitHub CLI、git、リポジトリ標準のテストコマンドを使える AI agent で利用可能
 - 🔁 短いポーリングループ：デフォルトで 3 分ごとに review と checks を確認
 - 🧵 スレッド単位の Review 状態：フラットなコメントだけでなく GitHub review threads を使用
 - 🔧 対応可能なフィードバック修正：review comments に対して小さく修正し検証

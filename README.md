@@ -132,6 +132,7 @@ Submit or monitor a GitHub pull request with a short polling loop that waits for
 ```
 
 **Features:**
+- 🤖 Agent-Agnostic: Works with any agent that can use GitHub CLI, git, and repo-native tests
 - 🔁 Short Polling Loop: Default 3-minute review/check cadence
 - 🧵 Thread-Aware Review State: Uses GitHub review threads, not only flat comments
 - 🔧 Actionable Feedback Fixes: Implements review comments with focused verification

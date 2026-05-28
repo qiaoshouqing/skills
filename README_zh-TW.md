@@ -132,6 +132,7 @@ Claude Code · OpenAI Codex · Gemini CLI · Cursor · VS Code · Amp · TRAE ·
 ```
 
 **特性：**
+- 🤖 Agent 通用：適用於能使用 GitHub CLI、git 和倉庫原生測試命令的 AI agent
 - 🔁 短輪詢循環：預設每 3 分鐘檢查 review 和 checks
 - 🧵 執行緒級 Review 狀態：讀取 GitHub review threads，不只看扁平評論
 - 🔧 修復可執行回饋：針對 review comments 做小範圍修復與驗證
