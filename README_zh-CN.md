@@ -3,7 +3,7 @@
 # Agent Skills 技能集合
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Skills](https://img.shields.io/badge/技能数量-5-blue.svg)](https://github.com/qiaoshouqing/Skills)
+[![Skills](https://img.shields.io/badge/技能数量-6-blue.svg)](https://github.com/qiaoshouqing/Skills)
 
 精选的 Agent Skills 技能集合，旨在提升开发效率、自动化常见开发流程。
 
@@ -120,6 +120,27 @@ Claude Code · OpenAI Codex · Gemini CLI · Cursor · VS Code · Amp · TRAE ·
 
 ---
 
+### 🔁 pr-review-loop
+
+用短轮询循环提交或监控 GitHub Pull Request：等待自动 review，修复可执行反馈，推送更新，并在 PR 可合并时停止。
+
+**快速开始：**
+```bash
+/pr-review-loop
+# 或直接说：
+# "创建 PR 并持续看 review" / "继续检查 PR 反馈" / "PR review loop"
+```
+
+**特性：**
+- 🔁 短轮询循环：默认每 3 分钟检查 review 和 checks
+- 🧵 线程级 Review 状态：读取 GitHub review threads，不只看扁平评论
+- 🔧 修复可执行反馈：针对 review comments 做小范围修复与验证
+- 🛑 明确停止条件：已合并、已关闭、可合并或真实阻塞时停止
+
+[📖 查看详细文档 →](./pr-review-loop/SKILL.md)
+
+---
+
 ### 📐 code-standards
 
 为任何 AI 编码工具生成通用代码质量标准。基于 Linus Torvalds 的 "Good Taste" 哲学，配备严格的 5 层代码审查框架。
@@ -202,6 +223,7 @@ cc
 ## 🚀 路线图
 
 - [x] **ship** - 一键 commit、push 和创建 PR
+- [x] **pr-review-loop** - 轮询 PR review，修复反馈，并在可合并时停止
 - [x] **code-standards** - 通用代码质量标准生成器（多工具、多语言）
 - [ ] **test-runner** - 基于变更的智能测试执行
 - [ ] **code-review** - 自动化代码审查清单

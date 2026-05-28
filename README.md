@@ -3,7 +3,7 @@
 # Agent Skills Collection
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Skills](https://img.shields.io/badge/skills-5-blue.svg)](https://github.com/qiaoshouqing/Skills)
+[![Skills](https://img.shields.io/badge/skills-6-blue.svg)](https://github.com/qiaoshouqing/Skills)
 
 A curated collection of agent skills designed to enhance productivity and automate common development workflows.
 
@@ -120,6 +120,27 @@ Commit, push, and create a PR in one step. Auto-generates commit messages and de
 
 ---
 
+### 🔁 pr-review-loop
+
+Submit or monitor a GitHub pull request with a short polling loop that waits for automated review, fixes actionable feedback, pushes updates, and stops when the PR is merge-ready.
+
+**Quick Start:**
+```bash
+/pr-review-loop
+# or simply ask:
+# "create a PR and watch reviews" / "keep checking PR feedback" / "PR review loop"
+```
+
+**Features:**
+- 🔁 Short Polling Loop: Default 3-minute review/check cadence
+- 🧵 Thread-Aware Review State: Uses GitHub review threads, not only flat comments
+- 🔧 Actionable Feedback Fixes: Implements review comments with focused verification
+- 🛑 Clear Stop Conditions: Stops when merged, closed, merge-ready, or truly blocked
+
+[📖 View detailed documentation →](./pr-review-loop/SKILL.md)
+
+---
+
 ### 📐 code-standards
 
 Generate universal code quality standards for any AI coding tool. Based on Linus Torvalds' "Good Taste" philosophy with a rigorous 5-layer code review framework.
@@ -202,6 +223,7 @@ cc
 ## 🚀 Roadmap
 
 - [x] **ship** - One-click commit, push, and PR creation
+- [x] **pr-review-loop** - Poll PR reviews, fix feedback, and stop when merge-ready
 - [x] **code-standards** - Universal code quality standards generator (multi-tool, multi-language)
 - [ ] **test-runner** - Smart test execution based on changes
 - [ ] **code-review** - Automated code review checklist

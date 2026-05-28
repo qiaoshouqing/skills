@@ -3,7 +3,7 @@
 # Agent Skills コレクション
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Skills](https://img.shields.io/badge/スキル数-5-blue.svg)](https://github.com/qiaoshouqing/Skills)
+[![Skills](https://img.shields.io/badge/スキル数-6-blue.svg)](https://github.com/qiaoshouqing/Skills)
 
 開発効率の向上と一般的な開発ワークフローの自動化を目的とした、Agent Skills のコレクションです。
 
@@ -120,6 +120,27 @@ yt-dlp を使用して YouTube、Bilibili、Twitter など1000以上のサイト
 
 ---
 
+### 🔁 pr-review-loop
+
+GitHub Pull Request を短いポーリングループで作成または監視します。自動レビューを待ち、対応可能なフィードバックを修正して push し、PR がマージ可能になったら停止します。
+
+**クイックスタート：**
+```bash
+/pr-review-loop
+# または：
+# "create a PR and watch reviews" / "PR feedback を確認し続けて" / "PR review loop"
+```
+
+**機能：**
+- 🔁 短いポーリングループ：デフォルトで 3 分ごとに review と checks を確認
+- 🧵 スレッド単位の Review 状態：フラットなコメントだけでなく GitHub review threads を使用
+- 🔧 対応可能なフィードバック修正：review comments に対して小さく修正し検証
+- 🛑 明確な停止条件：merged、closed、merge-ready、または実際に blocked のとき停止
+
+[📖 詳細ドキュメント →](./pr-review-loop/SKILL.md)
+
+---
+
 ### 📐 code-standards
 
 あらゆる AI コーディングツール向けの汎用コード品質基準を生成。Linus Torvalds の「Good Taste」哲学に基づき、厳格な 5 層コードレビューフレームワークを備えています。
@@ -202,6 +223,7 @@ cc
 ## 🚀 ロードマップ
 
 - [x] **ship** - ワンクリックで commit、push、PR 作成
+- [x] **pr-review-loop** - PR review をポーリングし、フィードバックを修正して merge-ready で停止
 - [x] **code-standards** - 汎用コード品質基準ジェネレーター（マルチツール・多言語対応）
 - [ ] **test-runner** - 変更に基づくスマートテスト実行
 - [ ] **code-review** - 自動コードレビューチェックリスト
