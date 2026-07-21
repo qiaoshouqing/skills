@@ -3,7 +3,7 @@
 # Agent Skills コレクション
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Skills](https://img.shields.io/badge/スキル数-6-blue.svg)](https://github.com/qiaoshouqing/Skills)
+[![Skills](https://img.shields.io/badge/スキル数-7-blue.svg)](https://github.com/qiaoshouqing/Skills)
 
 開発効率の向上と一般的な開発ワークフローの自動化を目的とした、Agent Skills のコレクションです。
 
@@ -172,6 +172,27 @@ GitHub Pull Request を短いポーリングループで作成または監視し
 | Cline / Roo Code | `.clinerules/code-standards.md` |
 
 [📖 詳細ドキュメント →](./code-standards/SKILL.md)
+
+---
+
+### 🧹 macos-disk-cleanup
+
+容量不足の macOS ディスクを安全に分析・整理し、Git Worktree、使用中の開発状態、ソースコード、シミュレーターデータ、復元可能なプロジェクトコピーを実証ベースで保護します。
+
+**クイックスタート：**
+```bash
+/macos-disk-cleanup
+# または：
+# "Mac のディスクを詳しく分析して整理" / "ディスクと Worktree を整理"
+```
+
+**機能：**
+- 🛡️ **安全性による分類**：P0、P1、保護対象、管理者のみ処理可能な残留物を分離
+- 🌳 **Worktree 完了証明**：非アクティブ、Git がクリーン、マージ済みまたは現在のメインに含まれることを確認
+- 📦 **復元を優先**：壊れた、または未登録のプロジェクトコピーを整理前にアーカイブ
+- 🔍 **ライブ検証**：プロセス、空き容量、Git 状態、スナップショット、デバイス、整理結果を再確認
+
+[📖 詳細ドキュメント →](./macos-disk-cleanup/SKILL.md)
 
 ## 📦 インストール
 

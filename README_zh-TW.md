@@ -3,7 +3,7 @@
 # Agent Skills 技能集合
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Skills](https://img.shields.io/badge/技能數量-6-blue.svg)](https://github.com/qiaoshouqing/Skills)
+[![Skills](https://img.shields.io/badge/技能數量-7-blue.svg)](https://github.com/qiaoshouqing/Skills)
 
 精選的 Agent Skills 技能集合，旨在提升開發效率、自動化常見開發流程。
 
@@ -172,6 +172,27 @@ Claude Code · OpenAI Codex · Gemini CLI · Cursor · VS Code · Amp · TRAE ·
 | Cline / Roo Code | `.clinerules/code-standards.md` |
 
 [📖 檢視詳細文件 →](./code-standards/SKILL.md)
+
+---
+
+### 🧹 macos-disk-cleanup
+
+安全分析並清理空間不足的 macOS 磁碟，透過即時證據保護 Git Worktree、使用中的開發狀態、原始碼、模擬器資料和可復原的專案副本。
+
+**快速開始：**
+```bash
+/macos-disk-cleanup
+# 或直接說：
+# "深度分析並清理 Mac 磁碟" / "清理磁碟和 Worktree"
+```
+
+**特性：**
+- 🛡️ **安全分級方案**：區分 P0、P1、受保護資料和僅限管理員處理的殘留
+- 🌳 **Worktree 完成證據**：移除前必須確認未使用、Git 乾淨且已合併或進入目前主分支
+- 📦 **復原優先**：清理損壞或未登記的專案副本前先建立復原封存
+- 🔍 **即時驗證**：重新檢查程序、磁碟空間、Git 狀態、快照、裝置與清理結果
+
+[📖 檢視詳細文件 →](./macos-disk-cleanup/SKILL.md)
 
 ## 📦 安裝
 
