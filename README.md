@@ -3,7 +3,7 @@
 # Agent Skills Collection
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Skills](https://img.shields.io/badge/skills-6-blue.svg)](https://github.com/qiaoshouqing/Skills)
+[![Skills](https://img.shields.io/badge/skills-7-blue.svg)](https://github.com/qiaoshouqing/Skills)
 
 A curated collection of agent skills designed to enhance productivity and automate common development workflows.
 
@@ -172,6 +172,27 @@ Generate universal code quality standards for any AI coding tool. Based on Linus
 | Cline / Roo Code | `.clinerules/code-standards.md` |
 
 [📖 View detailed documentation →](./code-standards/SKILL.md)
+
+---
+
+### 🧹 macos-disk-cleanup
+
+Safely analyze and clean a nearly full macOS disk, with evidence-driven protection for Git Worktrees, active developer state, source code, simulator data, and recoverable project copies.
+
+**Quick Start:**
+```bash
+/macos-disk-cleanup
+# or simply ask:
+# "deeply analyze and clean my Mac disk" / "清理磁盘和 Worktree"
+```
+
+**Features:**
+- 🛡️ **Safety-Graded Plans**: Separates P0, P1, protected data, and admin-only residues
+- 🌳 **Worktree Completion Proof**: Requires inactive, clean, and merged/current-main evidence before removal
+- 📦 **Recovery First**: Archives broken or unregistered project copies before cleanup
+- 🔍 **Live Verification**: Rechecks processes, disk space, Git state, snapshots, devices, and cleanup results
+
+[📖 View detailed documentation →](./macos-disk-cleanup/SKILL.md)
 
 ## 📦 Installation
 
